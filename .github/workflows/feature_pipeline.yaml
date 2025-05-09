@@ -1,4 +1,4 @@
-name: taxi_rides_hourly_features_pipeline
+name: citibike_rides_hourly_features_pipeline
 on:
   schedule:
     - cron: "0 * * * *"  # Runs every hour
