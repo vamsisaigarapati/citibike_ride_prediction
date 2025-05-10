@@ -2,10 +2,8 @@ name: citibike_rides_hourly_inference_pipeline
 
 on:
   schedule:
-    - cron: "5 * * * *" 
-      workflows: ["citibike_rides_hourly_features_pipeline"]
-      types:
-        - completed
+    - cron: "5 * * * *"  # Runs every hour
+  workflow_dispatch: {} 
 
   workflow_dispatch: # Allows manual triggering of the workflow
 

@@ -138,7 +138,6 @@ def fetch_days_data(days):
     fetch_data_from = current_date - timedelta(days=(days))
     fetch_data_to = current_date - timedelta(days=0)
     print(fetch_data_from, fetch_data_to)
-    print("ghcgchcgfc")
     fs = get_feature_store()
     fg = fs.get_feature_group(name=config.FEATURE_GROUP_NAME, version=1)
 
