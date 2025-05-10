@@ -135,8 +135,8 @@ def fetch_hourly_rides(hours):
 
 def fetch_days_data(days):
     current_date = pd.to_datetime(datetime.now(timezone.utc)).tz_convert("America/New_York")
-    fetch_data_from = current_date - timedelta(days=(365 + days))
-    fetch_data_to = current_date - timedelta(days=365)
+    fetch_data_from = current_date - timedelta(days=(days))
+    fetch_data_to = current_date - timedelta(days=0)
     print(fetch_data_from, fetch_data_to)
     print("ghcgchcgfc")
     fs = get_feature_store()

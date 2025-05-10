@@ -8,7 +8,7 @@ import pandas as pd
 import pytz
 sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "..")))
 import src.config as config
-from src.data_utils import fetch_batch_raw_data, transform_raw_data_into_ts_data
+from src.data_utils import fetch_batch_raw_data, transform_raw_data_into_ts_data,fetch_batch_raw_data_full
 
 # Configure logging
 logging.basicConfig(

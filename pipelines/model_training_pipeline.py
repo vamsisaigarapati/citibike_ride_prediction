@@ -14,7 +14,7 @@ from src.inference import (
 from src.pipeline_utils import get_pipeline
 
 print(f"Fetching data from group store ...")
-ts_data = fetch_days_data(28)
+ts_data = fetch_days_data(180)
 print(len(ts_data))
 print(f"Transforming to ts_data ...")
 
@@ -48,11 +48,13 @@ if test_mae < metric.get("test_mae"):
     model_registry = project.get_model_registry()
 
     model = model_registry.sklearn.create_model(
-        name="taxi_demand_predictor_next_hour",
+        name=config.MODEL_NAME,
         metrics={"test_mae": test_mae},
+        description="LightGBM model for bike rides",
         input_example=features.sample(),
         model_schema=model_schema,
+        #include_files=["src/", "requirements.txt"]  # Include directories and files
     )
-    model.save(model_path)
+    model.save(str(model_path))
 else:
     print(f"Skipping model registration because new model is not better!")
