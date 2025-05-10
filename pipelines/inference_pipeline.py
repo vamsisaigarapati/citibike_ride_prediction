@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 import pytz
 import src.config as config
+from src.data_utils import transform_ts_data_info_features_and_target
 from src.inference import (
     get_feature_store,
     get_model_predictions,
@@ -36,7 +37,7 @@ ts_data["pickup_hour"] = ts_data["pickup_hour"].dt.tz_localize(None)
 
 from src.data_utils import transform_ts_data_info_features
 
-features = transform_ts_data_info_features(ts_data, window_size=24 * 28, step_size=23)
+features,targets = transform_ts_data_info_features_and_target(ts_data, window_size=24*28, step_size=12)
 
 model = load_model_from_registry()
 
