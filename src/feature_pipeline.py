@@ -36,7 +36,7 @@ logger.info(f"Raw data fetched. Number of records: {len(rides)}")
 
 # Step 4: Transform raw data into time-series data
 logger.info("Transforming raw data into time-series data...")
-ts_data = transform_raw_data_into_ts_data(rides)
+ts_data = transform_raw_data_into_ts_data(rides,)
 logger.info(
     f"Transformation complete. Number of records in time-series data: {len(ts_data)}"
 )

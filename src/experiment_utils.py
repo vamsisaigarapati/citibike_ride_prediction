@@ -43,6 +43,9 @@ def log_model_to_mlflow(
     """
     try:
         # Set the experiment
+        uri = os.environ["MLFLOW_TRACKING_URI"]
+        mlflow.set_tracking_uri(uri)
+        logger.info("MLflow tracking URI and credentials set.")
         mlflow.set_experiment(experiment_name)
         logger.info(f"Experiment set to: {experiment_name}")
 
