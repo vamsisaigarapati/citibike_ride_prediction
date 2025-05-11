@@ -24,8 +24,8 @@ for directory in [
     directory.mkdir(parents=True, exist_ok=True)
 
 
-HOPSWORKS_API_KEY = os.getenv("HOPSWORKS_API_KEY")
-HOPSWORKS_PROJECT_NAME = os.getenv("HOPSWORKS_PROJECT_NAME")
+HOPSWORKS_API_KEY = "FsAq8qxkpYYKgyl1.960svtpEd24fe8larl95fRmQUQUHFwLSQApdtrBSbXQKipo8tXETVcbWptKORWVK"
+HOPSWORKS_PROJECT_NAME = "nyc_taxi_project"
 
 FEATURE_GROUP_NAME = "time_series_hourly_feature_group_citi_bike"
 FEATURE_GROUP_VERSION = 1
